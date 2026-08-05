@@ -1,0 +1,15 @@
+const fs = require('fs');
+const file = 'src/react-frontend/src/pages/SettingsPage.jsx';
+let c = fs.readFileSync(file, 'utf8');
+const mapStr1 = '].map(page => (';
+const newMapStr1 = '].map(page => { const isChecked = newUser.pageAccess?.[page.key] ?? false; return ( <div key={page.key} style={{ display: \'flex\', alignItems: \'center\', gap: \'12px\', cursor: \'pointer\', userSelect: \'none\' }} onClick={() => setNewUser({ ...newUser, pageAccess: { ...(newUser.pageAccess || {}), [page.key]: !isChecked } })}> <div style={{ position: \'relative\', width: \'36px\', height: \'20px\', borderRadius: \'20px\', background: isChecked ? \'var(--color-primary)\' : \'rgba(255,255,255,0.05)\', transition: \'0.3s\', flexShrink: 0 }}> <div style={{ position: \'absolute\', top: \'2px\', left: isChecked ? \'18px\' : \'2px\', width: \'16px\', height: \'16px\', borderRadius: \'50%\', background: isChecked ? \'#111\' : \'#888\', transition: \'0.3s\', boxShadow: \'0 2px 4px rgba(0,0,0,0.2)\' }} /> </div> <span style={{ fontSize: \'13px\', color: isChecked ? \'var(--text-primary)\' : \'var(--text-secondary)\', transition: \'0.3s\', fontWeight: isChecked ? 600 : 400 }}>{page.label}</span> </div> ); })}';
+const oldBody1Regex = /\]\.map\(page => \([\s\S]*?<\/label>\s*\)\)\}/;
+c = c.replace(oldBody1Regex, newMapStr1);
+const mapStr2 = '].map(perm => (';
+const newMapStr2 = '].map(perm => { const isChecked = newUser.permissions?.[perm.key] ?? false; return ( <div key={perm.key} style={{ display: \'flex\', alignItems: \'center\', gap: \'12px\', cursor: \'pointer\', userSelect: \'none\' }} onClick={() => setNewUser({ ...newUser, permissions: { ...(newUser.permissions || {}), [perm.key]: !isChecked } })}> <div style={{ position: \'relative\', width: \'36px\', height: \'20px\', borderRadius: \'20px\', background: isChecked ? \'var(--color-primary)\' : \'rgba(255,255,255,0.05)\', transition: \'0.3s\', flexShrink: 0 }}> <div style={{ position: \'absolute\', top: \'2px\', left: isChecked ? \'18px\' : \'2px\', width: \'16px\', height: \'16px\', borderRadius: \'50%\', background: isChecked ? \'#111\' : \'#888\', transition: \'0.3s\', boxShadow: \'0 2px 4px rgba(0,0,0,0.2)\' }} /> </div> <span style={{ fontSize: \'13px\', color: isChecked ? \'var(--text-primary)\' : \'var(--text-secondary)\', transition: \'0.3s\', fontWeight: isChecked ? 600 : 400 }}>{perm.label}</span> </div> ); })}';
+const oldBody2Regex = /\]\.map\(perm => \([\s\S]*?<\/label>\s*\)\)\}/;
+c = c.replace(oldBody2Regex, newMapStr2);
+c = c.replace(selectAll1, newSelectAll1);
+c = c.replace(selectAll2, newSelectAll2);
+fs.writeFileSync(file, c);
+console.log('done');
