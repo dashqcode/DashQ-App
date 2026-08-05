@@ -1,0 +1,46 @@
+{
+  "name": "conca-pdf-manager",
+  "version": "1.0.0",
+  "description": "Sistema Inteligente de Gestión de Archivos PDF con IA Local",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000 || npx http-server -p 8000",
+    "dev": "npx live-server --port=8000",
+    "build": "echo 'No build required - vanilla JavaScript'",
+    "test": "echo 'Testing framework not configured yet'"
+  },
+  "keywords": [
+    "PDF",
+    "documento",
+    "gestor",
+    "IA",
+    "local",
+    "privacidad",
+    "IndexedDB",
+    "OCR"
+  ],
+  "author": "Conca Digital",
+  "license": "MIT",
+  "dependencies": {
+    "pdf.js": "^3.11.174",
+    "apexcharts": "^3.40.0",
+    "lucide": "latest"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conca-digital/pdf-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/conca-digital/pdf-manager/issues"
+  },
+  "homepage": "https://github.com/conca-digital/pdf-manager#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
