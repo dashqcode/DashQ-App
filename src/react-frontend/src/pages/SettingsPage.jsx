@@ -914,15 +914,15 @@ function SettingsPage() {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '16px 24px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Versión</div>
                     <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-primary)' }}>{sysVersion}</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '16px 24px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Última Actualización</div>
                     <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text-primary)' }}>{sysLastUpdate ? formatDate(sysLastUpdate) : 'Original'}</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '16px 24px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Estado</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }}></div>
@@ -1013,7 +1013,7 @@ function SettingsPage() {
                             <td style={{ padding: '8px 12px', color: 'var(--text-secondary)' }}>{formatDate(h.date)}</td>
                             <td style={{ padding: '8px 12px', color: 'var(--text-secondary)' }}>{h.files_updated} archivos</td>
                             <td style={{ padding: '8px 12px' }}>
-                              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '2px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 600, background: h.status === 'success' ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)', color: h.status === 'success' ? '#22c55e' : '#ef4444' }}>
+                              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', padding: '4px 12px', borderRadius: '20px', fontSize: '10px', fontWeight: 600, background: h.status === 'success' ? 'rgba(34,197,94,0.1)' : 'rgba(239,68,68,0.1)', color: h.status === 'success' ? '#22c55e' : '#ef4444' }}>
                                 <Icon icon={h.status === 'success' ? 'solar:check-circle-bold-duotone' : 'mdi:close'} size={12} />
                                 {h.status === 'success' ? 'Exitosa' : 'Error'}
                               </span>
