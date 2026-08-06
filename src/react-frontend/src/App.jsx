@@ -245,9 +245,9 @@ function Sidebar() {
               position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', 
               width: collapsed ? '36px' : '40px', height: collapsed ? '36px' : '40px', 
               borderRadius: '50%', 
-              background: collapsed ? 'transparent' : 'rgba(255,255,255,0.03)', 
-              border: collapsed ? 'none' : '1px solid rgba(255,255,255,0.05)', 
-              cursor: 'pointer', color: 'var(--text-primary)', transition: '0.2s', flexShrink: 0 
+              background: collapsed ? 'transparent' : (unreadActivities > 0 ? 'rgba(99,102,241,0.1)' : 'rgba(255,255,255,0.03)'), 
+              border: collapsed ? 'none' : (unreadActivities > 0 ? '1px solid rgba(99,102,241,0.3)' : '1px solid rgba(255,255,255,0.05)'), 
+              cursor: 'pointer', color: unreadActivities > 0 ? 'var(--color-primary)' : 'var(--text-primary)', transition: '0.2s', flexShrink: 0 
             }}
             onMouseEnter={e => { e.currentTarget.style.background = collapsed ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.08)' }}
             onMouseLeave={e => { e.currentTarget.style.background = collapsed ? 'transparent' : 'rgba(255,255,255,0.03)' }}
