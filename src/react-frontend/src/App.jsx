@@ -278,11 +278,15 @@ function Sidebar() {
                   onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                   onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px', color: 'var(--color-primary)', fontWeight: 'bold' }}>
-                    <Icon icon="solar:bell-bing-bold-duotone" size={16} />
-                    ¡Nueva Actividad!
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-primary)', fontWeight: '600' }}>
+                    <div style={{ background: 'rgba(99,102,241,0.1)', color: 'var(--color-primary)', width: '32px', height: '32px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Icon icon="solar:bell-bing-bold-duotone" size={18} />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '13px' }}>{unreadActivities} {unreadActivities === 1 ? 'Nueva Actividad' : 'Nuevas Actividades'}</div>
+                      <div style={{ fontSize: '11px', color: 'var(--text-secondary)', fontWeight: 'normal', marginTop: '2px' }}>Toca para revisar</div>
+                    </div>
                   </div>
-                  Tienes <strong style={{ color: '#fff' }}>{unreadActivities}</strong> actividad(es) pendiente(s). Haz clic aquí para ir al Centro de Actividades y revisarlas.
                 </button>
               )}
             </div>
