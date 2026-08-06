@@ -30,8 +30,15 @@
           50% { width: 60%; }
           100% { left: 150%; width: 30%; }
         }
+        .loader-hide-anim {
+          animation: loaderReveal 1.2s cubic-bezier(0.7, 0, 0.2, 1) forwards !important;
+        }
+        @keyframes loaderReveal {
+          0% { clip-path: ellipse(150% 150% at 50% 50%); }
+          100% { clip-path: ellipse(150% 150% at 50% -150%); }
+        }
       </style>
-      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px;">
+      <div id="loader-content" style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px; transition: opacity 0.3s ease;">
         <span style="color: #9ca3af; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;">Iniciando</span>
         <div style="width: 120px; height: 2px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; overflow: hidden; margin-top: 4px;">
           <div style="width: 40%; height: 100%; background: #6366f1; border-radius: 2px; position: relative; box-shadow: 0 0 8px #6366f1; animation: sleek-progress-anim 1.5s infinite ease-in-out;"></div>

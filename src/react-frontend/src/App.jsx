@@ -430,8 +430,18 @@ function App() {
         new Promise(r => setTimeout(r, 3000))
       ]).then(() => {
         setTimeout(() => {
-          loader.style.opacity = '0';
-          setTimeout(() => loader.remove(), 500);
+          // Fade out inner contents first
+          const loaderContent = document.getElementById('loader-content');
+          const logo = loader.querySelector('img');
+          if (loaderContent) loaderContent.style.opacity = '0';
+          if (logo) logo.style.opacity = '0';
+          
+          // Then start the curved reveal animation
+          setTimeout(() => {
+            loader.style.transition = 'none'; // Remove opacity transition to not conflict
+            loader.classList.add('loader-hide-anim');
+            setTimeout(() => loader.remove(), 1200);
+          }, 300);
         }, 300);
       });
     }
