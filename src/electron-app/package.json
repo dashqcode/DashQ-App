@@ -1,6 +1,6 @@
 {
   "name": "gestor-documental",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Sistema avanzado de gesti\u00f3n documental",
   "main": "main.js",
   "scripts": {
