@@ -949,7 +949,7 @@ function SettingsPage() {
                     onClick={handleBuildAll}
                     disabled={isExporting}
                     style={{
-                      marginTop: 'auto', padding: '12px 16px', borderRadius: '30px', border: 'none', fontWeight: 600, fontSize: '13px', cursor: isExporting ? 'wait' : 'pointer',
+                      marginTop: 'auto', padding: '16px 24px', borderRadius: '30px', border: 'none', fontWeight: 600, fontSize: '13px', cursor: isExporting ? 'wait' : 'pointer',
                       background: isExporting ? 'rgba(34,197,94,0.15)' : '#22c55e',
                       color: isExporting ? '#22c55e' : '#111', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'all 0.2s', width: '100%',
                       boxShadow: isExporting ? 'none' : '0 4px 12px rgba(34,197,94,0.3)'
@@ -973,7 +973,7 @@ function SettingsPage() {
                       <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '11px' }}>Descarga la App de Escritorio para instalarla en nuevas PCs.</p>
                     </div>
                   </div>
-                  <a href={`/api/system/download-installer?t=${Date.now()}`} target="_blank" download style={{ marginTop: 'auto', textDecoration: 'none', textAlign: 'center', padding: '12px 16px', borderRadius: '30px', border: 'none', fontWeight: 600, fontSize: '13px', background: 'rgba(56,189,248,0.1)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'all 0.2s', width: '100%' }} onMouseEnter={e => { e.currentTarget.style.background = 'rgba(56,189,248,0.2)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={e => { e.currentTarget.style.background = 'rgba(56,189,248,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                  <a href={`/api/system/download-installer?t=${Date.now()}`} target="_blank" download style={{ marginTop: 'auto', textDecoration: 'none', textAlign: 'center', padding: '16px 24px', borderRadius: '30px', border: 'none', fontWeight: 600, fontSize: '13px', background: 'rgba(56,189,248,0.1)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', transition: 'all 0.2s', width: '100%' }} onMouseEnter={e => { e.currentTarget.style.background = 'rgba(56,189,248,0.2)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={e => { e.currentTarget.style.background = 'rgba(56,189,248,0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
                     <Icon icon="solar:download-bold-duotone" size={18} />
                     Descargar App (.exe)
                   </a>
