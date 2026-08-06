@@ -1,0 +1,55 @@
+name: Build and Release DashQ
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies (React)
+        working-directory: ./src/react-frontend
+        run: npm install
+
+      - name: Build React App
+        working-directory: ./src/react-frontend
+        run: npm run build
+
+      - name: Install dependencies (Backend)
+        working-directory: ./src/backend
+        run: npm install
+
+      - name: Build Backend Executable (if using pkg)
+        working-directory: ./src/backend
+        run: npm install -g pkg && pkg . --targets node18-win-x64 --output dist/DashQ.exe
+        continue-on-error: true
+
+      - name: Install dependencies (Electron)
+        working-directory: ./src/electron-app
+        run: npm install
+
+      - name: Build Electron App (Windows)
+        working-directory: ./src/electron-app
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run build
+        
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            src/electron-app/dist/*.exe
+            src/electron-app/dist/*.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

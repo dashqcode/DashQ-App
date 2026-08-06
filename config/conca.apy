@@ -1,0 +1,47 @@
+{
+    "name": "Conca PDF Manager",
+    "version": "v1.0.10",
+    "description": "Sistema Inteligente de Gesti\u00f3n de Archivos PDF con IA Local",
+    "author": "Conca Digital",
+    "license": "MIT",
+    "type": "webapp",
+    "entry": "index.html",
+    "config": {
+        "db_name": "ConcaPDFManager",
+        "db_version": 1,
+        "max_storage_mb": 250,
+        "pdf_worker_url": "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js",
+        "theme": "dark-neon",
+        "language": "es"
+    },
+    "features": {
+        "pdf_upload": true,
+        "text_extraction": true,
+        "ai_chat": true,
+        "pdf_compression": true,
+        "pdf_encryption": true,
+        "pdf_export": true,
+        "document_management": true,
+        "local_storage": true,
+        "offline_mode": true
+    },
+    "dependencies": {
+        "pdf.js": "3.11.174",
+        "apexcharts": "^3.40.0",
+        "lucide": "latest"
+    },
+    "capabilities": [
+        "Read PDF files",
+        "Extract text from PDFs",
+        "Generate PDF thumbnails",
+        "Process documents locally",
+        "Manage document database",
+        "Chat with document AI",
+        "Filter and search documents",
+        "Organize by categories",
+        "Compress PDFs",
+        "Encrypt PDFs",
+        "Export to images"
+    ],
+    "gemini_api_key": "TU_API_KEY_AQUI"
+}

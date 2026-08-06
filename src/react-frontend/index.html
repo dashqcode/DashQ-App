@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashQ - Gestor de Archivos</title>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Iconify - Solar Bold Duotone Icons via CDN -->
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script>
+    window.onerror = function(msg, url, line, col, error) {
+      document.body.innerHTML += '<div style="background:red;color:white;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999999;padding:20px;box-sizing:border-box;"><h2>CRITICAL ERROR</h2><pre>' + msg + '\\n' + url + ':' + line + ':' + col + '\\n' + (error && error.stack ? error.stack : '') + '</pre></div>';
+    };
+  </script></head>
+  <body>
+    <div id="initial-loader" style="position:fixed; top:0; left:0; width:100%; height:100%; z-index:999999; display:flex; flex-direction:column; align-items:center; justify-content:center; background-color:#1f1f1f; font-family:'Plus Jakarta Sans', sans-serif; transition: opacity 0.5s ease;">
+      <img src="/logo.svg" alt="DashQ" style="width: 48px; height: 48px; margin-bottom: 16px; animation: pulse 2s infinite;" />
+      <style>
+        @keyframes pulse {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.1); }
+        }
+        @keyframes sleek-progress-anim {
+          0% { left: -50%; width: 30%; }
+          50% { width: 60%; }
+          100% { left: 150%; width: 30%; }
+        }
+      </style>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 10px;">
+        <span style="color: #9ca3af; font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;">Iniciando</span>
+        <div style="width: 120px; height: 2px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; overflow: hidden; margin-top: 4px;">
+          <div style="width: 40%; height: 100%; background: #6366f1; border-radius: 2px; position: relative; box-shadow: 0 0 8px #6366f1; animation: sleek-progress-anim 1.5s infinite ease-in-out;"></div>
+        </div>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,54 @@
+{
+  "name": "gestor-documental",
+  "version": "1.0.10",
+  "description": "Sistema avanzado de gesti\u00f3n documental",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build --win",
+    "postbuild": "node -e \"const fs=require('fs'); if(!fs.existsSync('../../Instalador')) fs.mkdirSync('../../Instalador'); fs.readdirSync('dist').filter(f=>(f.endsWith('.exe') || f.endsWith('.yml')) && !f.includes('uninstaller')).forEach(f=>fs.copyFileSync('dist/'+f, '../../Instalador/'+f));\""
+  },
+  "build": {
+    "appId": "com.gestordocumental.app.v2",
+    "productName": "DashQ",
+    "directories": {
+      "output": "dist"
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "dashqcode",
+      "repo": "DashQ-App"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerSidebar": "build/sidebar.bmp",
+      "uninstallerSidebar": "build/sidebar.bmp",
+      "installerHeader": "build/header.bmp"
+    },
+    "extraResources": [
+      {
+        "from": "../backend/dist/DashQ.exe",
+        "to": "backend-bin/DashQ.exe"
+      }
+    ]
+  },
+  "author": "Alexs",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^10.1.0",
+    "electron": "^43.1.1",
+    "electron-builder": "^26.15.3",
+    "wait-on": "^9.0.10"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.9"
+  }
+}
