@@ -401,7 +401,7 @@ function SettingsPage() {
   };
 
   // Shared card style
-  const cardStyle = { background: 'var(--bg-card)', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '24px', boxShadow: 'none' };
+  const cardStyle = { background: 'var(--bg-card)', border: 'none', borderRadius: '24px', padding: '24px', boxShadow: 'none' };
   const navBtnStyle = (key) => ({ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px 14px', background: activeTab === key ? 'rgba(255, 255, 255, 0.08)' : 'transparent', border: 'none', borderRadius: '30px', color: activeTab === key ? 'var(--color-primary)' : 'var(--text-secondary)', fontSize: '13px', fontWeight: activeTab === key ? '600' : '500', textAlign: 'left', cursor: 'pointer', transition: 'all 0.2s', outline: 'none', width: '100%' });
 
   return (
@@ -914,15 +914,15 @@ function SettingsPage() {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Versión</div>
                     <div style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-primary)' }}>{sysVersion}</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Última Actualización</div>
                     <div style={{ fontSize: '13px', fontWeight: 500, color: 'var(--text-primary)' }}>{sysLastUpdate ? formatDate(sysLastUpdate) : 'Original'}</div>
                   </div>
-                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: '1px solid rgba(255,255,255,0.04)' }}>
+                  <div style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '30px', padding: '12px', border: 'none' }}>
                     <div style={{ fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: 600, marginBottom: '4px' }}>Estado</div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                       <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e' }}></div>
