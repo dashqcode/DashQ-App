@@ -140,7 +140,7 @@ function ChatPage() {
               placeholder={viewMode === 'chats' ? "Buscar chats..." : "Buscar contactos..."} 
               value={searchTerm}
               onChange={e => setSearchTerm(e.target.value)}
-              style={{ width: '100%', padding: '14px 16px 14px 44px', background: '#161616', border: '1px solid var(--border-light)', borderRadius: '9999px', color: 'var(--text-primary)', fontSize: '14px', outline: 'none' }}
+              style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '9999px', color: 'var(--text-primary)', fontSize: '14px', outline: 'none' }}
             />
           </div>
         </div>
